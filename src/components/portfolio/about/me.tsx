@@ -15,7 +15,7 @@ export default function MeInfo() {
   return (
     <div className='w-full screen-line-after flex'>
       <div className='h-full border-r border-grid'>
-        <div className='flex-center p-1 border border-slate-200 rounded-full'>
+        <div className='flex-center p-1 border border-border rounded-full'>
           <Image
             src={ME.avatar}
             alt={ME.username}
@@ -37,7 +37,7 @@ export default function MeInfo() {
                       href={social.url}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='flex-center p-1 rounded-full hover:bg-slate-100'
+                      className='flex-center p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-600'
                     >
                       <Image
                         src={social.logo}
