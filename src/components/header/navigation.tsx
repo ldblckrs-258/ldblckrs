@@ -1,15 +1,9 @@
 import React from 'react'
 
 import { cn } from '@/lib/utils'
+import { NAV_LINKS } from '@/static/config/navigation'
 
 import { NavItem } from './nav-item'
-
-const NAV_LINKS = [
-  { title: 'About', href: '#about' },
-  { title: 'Experience', href: '#experience' },
-  { title: 'Projects', href: '#projects' },
-  { title: 'Contact', href: '#contact' },
-]
 
 export function Navigation({
   className,

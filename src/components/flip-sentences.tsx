@@ -20,7 +20,7 @@ export default function FlipSentences({
   const startAnimation = () => {
     intervalRef.current = setInterval(() => {
       setCurrentSentence((prev) => (prev + 1) % sentences.length)
-    }, 2500)
+    }, 3000)
   }
 
   const handleVisibilityChange = () => {
