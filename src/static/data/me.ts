@@ -19,19 +19,19 @@ const ME = {
       name: 'Facebook',
       username: 'Lê Đức Bảo',
       url: 'https://www.facebook.com/ldb.258',
-      logo: '/external/facebook.svg'
+      logo: './external/facebook.svg'
     },
     {
       name: 'Instagram',
       username: '@ldb._dev01d',
       url: 'https://www.instagram.com/ldb._dev01d',
-      logo: '/external/instagram.svg'
+      logo: './external/instagram.svg'
     },
     {
       name: 'Github',
       username: 'ldblckrs-258',
       url: 'https://github.com/ldblckrs-258',
-      logo: '/tech-stack/github-light.svg',
+      logo: './tech-stack/github-light.svg',
       logoDark: '/tech-stack/github-dark.svg'
     },
   ]
