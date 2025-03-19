@@ -44,7 +44,7 @@ export const TECH_STACK: TechStack[] = [
     icon: '/images/tech-stack/nextjs.svg',
   },
   {
-    key: 'express-js',
+    key: 'expressjs',
     title: 'Express.js',
     href: 'https://expressjs.com/',
     icon: '/images/tech-stack/expressjs.svg',
@@ -71,13 +71,14 @@ export const TECH_STACK: TechStack[] = [
     key: 'shacdn-ui',
     title: 'Shacdn UI',
     href: 'https://ui.shadcn.com/',
-    icon: '/images/tech-stack/shacdn-ui.svg',
+    icon: '/images/tech-stack/shacdn-ui-light.svg',
+    iconDark: '/images/tech-stack/shacdn-ui-dark.svg',
   },
   {
     key: 'socketio',
     title: 'Socket.IO',
     href: 'https://socket.io/',
-    icon: '/images/tech-stack/socketio.svg',
+    icon: '/images/tech-stack/socket-io.svg',
   },
   {
     key: 'mongodb',
@@ -101,7 +102,8 @@ export const TECH_STACK: TechStack[] = [
     key: 'github',
     title: 'GitHub',
     href: 'https://github.com',
-    icon: '/images/tech-stack/github.svg',
+    icon: '/images/tech-stack/github-light.svg',
+    iconDark: '/images/tech-stack/github-dark.svg',
   },
   {
     key: 'figma',

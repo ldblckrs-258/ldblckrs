@@ -3,4 +3,5 @@ export interface TechStack {
   title: string
   href: string
   icon: string
+  iconDark?: string
 }
