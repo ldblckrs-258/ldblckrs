@@ -2,7 +2,6 @@ import { type Components, MarkdownAsync } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const defaultComponents: Components = {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   a({ node, children, ...props }) {
     return (
       <a

@@ -1,7 +1,9 @@
 import LinesPattern from '@/components/patterns/line-pattern'
 import AboutSection from '@/components/portfolio/about'
+import ExperienceSection from '@/components/portfolio/experience'
 import OverviewSection from '@/components/portfolio/overview'
 import PanelSection from '@/components/portfolio/panel'
+import TechStackSection from '@/components/portfolio/tech-stack'
 
 export default function Home() {
   return (
@@ -11,6 +13,10 @@ export default function Home() {
       <OverviewSection />
       <LinesPattern className='relative h-4' />
       <AboutSection />
+      <LinesPattern className='relative h-4' />
+      <TechStackSection />
+      <LinesPattern className='relative h-4' />
+      <ExperienceSection />
     </div>
   )
 }

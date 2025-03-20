@@ -13,7 +13,7 @@ const ME = {
   avatar: '/images/avatar.jpg',
   about: `
   Hi, I'm Duc Bao, a software engineer specializing in Web development with a focus on Frontend development. I excel at building high-quality web and mobile applications using Next.js, React, TypeScript, and other modern front-end technologies. My expertise lies in creating responsive, performant user interfaces and seamless user experiences.\n
-  Additionally, I also have backend development skills with Node.js, allowing me to work across the full stack. I'm passionate about delivering clean, maintainable code and staying current with the latest web development trends and best practices.`,
+  Additionally, I also have some backend development skills with Node.js, allowing me to work across the full stack. I'm passionate about delivering clean, maintainable code and staying current with the latest web development trends and best practices.`,
   socials: [
     {
       name: 'Facebook',
