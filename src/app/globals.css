@@ -48,6 +48,10 @@
   --d-grid: oklch(0.968 0.007 247.896);
 }
 
+html {
+  scroll-padding: 80px;
+}
+
 body {
   font-family: var(--font-sans);
 }
