@@ -7,7 +7,7 @@ import TechStackSection from '@/components/portfolio/tech-stack'
 
 export default function Home() {
   return (
-    <div className='relative min-h-screen w-full py-2'>
+    <div className='relative min-h-screen w-full py-2 overflow-x-hidden'>
       <PanelSection />
       <LinesPattern className='relative h-4' />
       <OverviewSection />

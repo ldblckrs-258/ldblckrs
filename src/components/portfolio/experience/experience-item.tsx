@@ -6,9 +6,15 @@ import { Experience } from '@/types/experiences'
 
 import { PositionItem } from './position-item'
 
-export function ExperienceItem({ experience }: { experience: Experience }) {
+export function ExperienceItem({
+  experience,
+  lastItem,
+}: {
+  experience: Experience
+  lastItem?: boolean
+}) {
   return (
-    <div className='screen-line-after space-y-4 py-4'>
+    <div className={`space-y-4 ${lastItem ? '' : 'screen-line-after'}`}>
       <div className='flex items-center space-x-2'>
         <span className='flex size-6 shrink-0 items-center justify-center'>
           {experience.companyLogo ? (

@@ -21,9 +21,15 @@ export default function ExperienceSection() {
           defaultValue={defaultValue}
           asChild
         >
-          <div className='px-4'>
+          <div className='px-4 space-y-6'>
             {EXPERIENCES.map((experience, index) => {
-              return <ExperienceItem key={index} experience={experience} />
+              return (
+                <ExperienceItem
+                  key={index}
+                  experience={experience}
+                  lastItem={index === EXPERIENCES.length - 1}
+                />
+              )
             })}
           </div>
         </AccordionPrimitive.Root>

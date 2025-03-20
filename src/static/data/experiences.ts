@@ -17,6 +17,7 @@ const EXPERIENCES: Experience[] = [
           "Next.js",
           "Tailwind CSS",
         ],
+        expanded: true,
       },
     ],
   },
@@ -48,6 +49,7 @@ const EXPERIENCES: Experience[] = [
           "Project Management",
           "..."
         ],
+        expanded: true,
       },
       {
         id: "8c1b8722-f482-474e-9134-8872b37c1aab",
