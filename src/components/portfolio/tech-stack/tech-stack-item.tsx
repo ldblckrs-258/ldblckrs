@@ -41,13 +41,13 @@ export default function TechStackItem({
             <Image
               src={theme === 'dark' && iconDark && isClient ? iconDark : icon}
               alt={title}
-              width={40}
-              height={40}
+              width={36}
+              height={36}
             />
           </Link>
         </TooltipTrigger>
         <TooltipContent>
-          <p className=' text-base'>{title}</p>
+          <p className='text-sm'>{title}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

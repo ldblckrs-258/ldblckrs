@@ -4,6 +4,7 @@ import { JetBrains_Mono, Roboto_Condensed } from 'next/font/google'
 import { HeaderMotion } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
+import WebOverlay from '@/components/web-overlay'
 
 import './globals.css'
 
@@ -46,6 +47,7 @@ export default function RootLayout({
           {children}
           <Toaster richColors closeButton expand />
         </ThemeProvider>
+        <WebOverlay />
       </body>
     </html>
   )

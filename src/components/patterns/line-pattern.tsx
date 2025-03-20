@@ -24,7 +24,7 @@ export function LinesPattern({
     <svg
       aria-hidden='true'
       className={cn(
-        'pointer-events-none inset-0 absolute h-full w-full text-neutral-400/40',
+        'pointer-events-none inset-0 absolute h-full w-full text-slate-400/50 dark:text-slate-600/50',
         className
       )}
       {...props}

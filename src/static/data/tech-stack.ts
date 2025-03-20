@@ -47,7 +47,8 @@ const TECH_STACKS: TechStack[] = [
     key: 'expressjs',
     title: 'Express.js',
     href: 'https://expressjs.com/',
-    icon: './tech-stack/expressjs.svg',
+    icon: './tech-stack/expressjs-light.svg',
+    iconDark: './tech-stack/expressjs-dark.svg',
   },
   {
     key: 'nestjs',
@@ -116,7 +117,7 @@ const TECH_STACKS: TechStack[] = [
     title: 'GitHub',
     href: 'https://github.com',
     icon: './tech-stack/github-light.svg',
-    iconDark: '/images/tech-stack/github-dark.svg',
+    iconDark: './tech-stack/github-dark.svg',
   },
   {
     key: 'figma',

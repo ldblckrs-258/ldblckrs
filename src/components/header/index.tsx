@@ -8,7 +8,6 @@ import { motion, useScroll, useSpring, useTransform } from 'motion/react'
 import ME from '@/static/data/me'
 
 import ModeToggle from '../mode-toggle'
-import LinesPattern from '../patterns/line-pattern'
 import { NavScrollspy } from './nav-scroll-spy'
 
 export function HeaderMotion() {
@@ -23,10 +22,6 @@ export function HeaderMotion() {
       style={{ translateY: top }}
     >
       <div className='relative border-y border-grid'>
-        <LinesPattern
-          className='-z-1 w-full h-full'
-          color='oklch(0.929 0.013 255.508)' // slate-300
-        />
         <div className='mx-auto md:max-w-4xl'>
           <div className='w-full flex items-center gap-3 border-x border-grid py-2 px-4 bg-background'>
             <div className='rounded-full flex-center border border-slate-200 dark:border-slate-700 p-0.5 bg-slate-100 dark:bg-slate-900'>
