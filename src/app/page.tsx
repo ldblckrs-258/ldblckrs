@@ -17,6 +17,7 @@ export default function Home() {
       <TechStackSection />
       <LinesPattern className='relative h-4' />
       <ExperienceSection />
+      <LinesPattern className='relative h-4' />
     </div>
   )
 }

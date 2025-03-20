@@ -14,7 +14,7 @@ export function ExperienceItem({
   lastItem?: boolean
 }) {
   return (
-    <div className={`space-y-4 ${lastItem ? '' : 'screen-line-after'}`}>
+    <div className={`space-y-4 ${lastItem ? '' : 'screen-line-after pb-4'}`}>
       <div className='flex items-center space-x-2'>
         <span className='flex size-6 shrink-0 items-center justify-center'>
           {experience.companyLogo ? (
