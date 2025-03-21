@@ -13,7 +13,6 @@ This portfolio is built using the following technologies:
 - **Frontend**: React 19, Next.js 15, TypeScript, Tailwind CSS 4
 - **UI Components**: Shadcn UI, Radix UI (Accordion, Collapsible, Tooltip, Tabs)
 - **Animation**: Tailwind CSS Animate, Motion
-- **State Management**: React Context API
 - **Markdown Rendering**: React Markdown with remark-gfm
 - **Additional Tools**: Git, GitHub
 
@@ -47,7 +46,7 @@ This portfolio is built using the following technologies:
 
 2. Install dependencies:
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    # or
    yarn
    # or
