@@ -88,5 +88,5 @@ MIT
 - GitHub: [https://github.com/ldblckrs-258](https://github.com/ldblckrs-258)
 
 ---
-
+Inspired and referenced from [https://chanhdai.com](https://chanhdai.com)
 Built with ❤️ by `ldblckrs`
