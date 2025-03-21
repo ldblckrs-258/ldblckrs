@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 
-import { VerifiedIcon } from 'lucide-react'
 import { motion, useScroll, useSpring, useTransform } from 'motion/react'
 
 import ME from '@/static/data/me'
@@ -36,7 +35,6 @@ export function HeaderMotion() {
 
             <div className='flex flex-1 items-center font-heading sm:text-lg font-semibold font-mono gap-2'>
               {ME.fullName}
-              <VerifiedIcon className='size-5 text-sky-600' />
             </div>
             <div className='flex-center gap-4'>
               <NavScrollspy className='max-sm:hidden' />

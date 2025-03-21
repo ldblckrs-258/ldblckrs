@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Roboto_Condensed } from 'next/font/google'
 
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
 import { HeaderMotion } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
@@ -48,6 +51,8 @@ export default function RootLayout({
           <Toaster richColors closeButton expand />
         </ThemeProvider>
         <WebOverlay />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

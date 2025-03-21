@@ -5,7 +5,7 @@ import TechStackItem from './tech-stack-item'
 
 export default function TechStackSection() {
   return (
-    <BaseSection>
+    <BaseSection id='tech-stack'>
       <div className='px-4 screen-line-after'>
         <h1 className='text-3xl font-semibold'>Tech Stack</h1>
       </div>

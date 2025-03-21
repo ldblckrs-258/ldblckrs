@@ -4,24 +4,31 @@ A modern, responsive portfolio website built with Next.js and React to showcase 
 
 ## 👨‍💻 About Me
 
-I'm Lê Đức Bảo (ldblckrs), a Software Engineer, Web Developer, and UI/UX Designer from Da Nang, Vietnam. I'm passionate about creating elegant, efficient, and user-friendly web applications.
+I'm Lê Đức Bảo (ldblckrs), a Software Engineer, Web Developer, and Frontend Developer from Da Nang, Vietnam. I'm passionate about creating elegant, efficient, and user-friendly web applications.
 
 ## 🚀 Tech Stack
 
 This portfolio is built using the following technologies:
 
-- **Frontend**: React, Next.js, TypeScript, Tailwind CSS
-- **UI Components**: Shadcn UI, Radix UI
-- **Animation**: Motion
-- **Additional Tools**: Git, GitHub, Figma
+- **Frontend**: React 19, Next.js 15, TypeScript, Tailwind CSS 4
+- **UI Components**: Shadcn UI, Radix UI (Accordion, Collapsible, Tooltip, Tabs)
+- **Animation**: Tailwind CSS Animate, Motion
+- **State Management**: React Context API
+- **Markdown Rendering**: React Markdown with remark-gfm
+- **Additional Tools**: Git, GitHub
 
 ## ✨ Features
 
-- Responsive design
-- Dark/Light mode toggle
-- Modern UI with animations
-- Showcase of technical skills and projects
-- Fast loading and optimized performance with Next.js
+- Responsive design optimized for all devices
+- Dark/Light mode toggle with system theme detection
+- Clean, minimalist UI with grid patterns and animations
+- Custom font implementation (Roboto Condensed and JetBrains Mono)
+- Tech stack showcase with interactive tooltips
+- Project portfolio with expandable details
+- Experience timeline with collapsible sections
+- Markdown support for dynamic content rendering
+- Smooth scrolling and scroll-spy navigation
+- Optimized performance with Next.js
 
 ## 🛠️ Getting Started
 
@@ -88,5 +95,5 @@ MIT
 - GitHub: [https://github.com/ldblckrs-258](https://github.com/ldblckrs-258)
 
 ---
-
+Inspired and referenced from [https://chanhdai.com](https://chanhdai.com)
 Built with ❤️ by `ldblckrs`
