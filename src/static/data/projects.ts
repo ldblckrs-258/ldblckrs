@@ -14,7 +14,7 @@ const PROJECTS : Project[] = [
       "TailwindCSS",
       "ShadCN UI"
     ],
-    description: "My personal portfolio showcasing my experience as a Software Engineer and Web Developer. Includes sections for personal information, contact details, and projects.\n- Features:\n\t- Showcases personal projects, skills, and work experience\n\t- Interactive and minimalistic UI\n\t- Responsive design for all screen sizes\n\t- Contact form for inquiries\n- Technologies:\n\t- Built with Next.js for performance and SEO\n\t- Styled using TailwindCSS for modern UI\n\t- Components powered by ShadCN UI for a consistent look and feel",
+    description: "My personal portfolio showcasing my experience as a Software Engineer and Web Developer. Includes sections for personal information, contact details, and projects.\n- Features:\n\t- Showcases personal projects, skills, and work experience\n\t- Interactive and minimalistic UI\n\t- Responsive design for all screen sizes\n- Technologies:\n\t- Built with Next.js for performance and SEO\n\t- Styled using TailwindCSS for modern UI\n\t- Components powered by ShadCN UI for a consistent look and feel",
   },
   {
     id: "whisperhythm",
