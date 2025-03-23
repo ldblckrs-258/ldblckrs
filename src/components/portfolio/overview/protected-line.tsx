@@ -21,8 +21,8 @@ export default function ProtectedLine({
     <div className="flex items-center gap-4 font-mono text-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground [&_svg:not([class*='size-'])]:size-4">
       {icon}
       {href ? (
-        <a href={href} className='link-decoration'>
-          {isClient ? content : '#'}
+        <a href={isClient ? href : '#'} className='link-decoration'>
+          {isClient ? content : '[Protected Content]'}
         </a>
       ) : markdown ? (
         <Markdown>{isClient ? content : '[Protected Content]'}</Markdown>
