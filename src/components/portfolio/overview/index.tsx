@@ -10,6 +10,7 @@ import {
 import ME from '@/static/data/me'
 
 import OverviewLine from './overview-line'
+import ProtectedLine from './protected-line'
 
 export default function OverviewSection() {
   const phoneNumberFormatted = parsePhoneNumber(
@@ -24,12 +25,12 @@ export default function OverviewSection() {
         markdown
       />
       <OverviewLine icon={<MapPinIcon />} content={ME.address} />
-      <OverviewLine
+      <ProtectedLine
         icon={<PhoneIcon />}
         content={phoneNumberFormatted || ME.phoneNumber}
         href={`tel:${he.decode(ME.phoneNumber)}`}
       />
-      <OverviewLine
+      <ProtectedLine
         icon={<MailIcon />}
         content={ME.email}
         href={`mailto:${he.decode(ME.email)}`}
