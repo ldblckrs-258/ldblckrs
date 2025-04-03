@@ -74,7 +74,7 @@ const PROJECTS : Project[] = [
       "react-router-dom",
       "framer-motion"
     ],
-    description: "A tourism promotion website for Da Nang, featuring location exploration, reviews, blog posting, and itinerary planning. I was responsible for designing and developing the frontend.\n- Features:\n\t- Explore and review tourist attractions in Da Nang\n\t- Users can read and post travel blogs\n\t- Create and share personalized travel itineraries\n\t- Website content and user management page for administrators\n- Technologies:\n\t- Built with React and TypeScript for a modern and scalable frontend\n\t- Vite for fast development and optimized builds\n\t- Styled using TailwindCSS for a clean UI\n\t- Animated interactions using Framer Motion\n\t- Routing handled by React Router DOM\n\t- Responsive design for mobile and desktop users\n- The backend of website was developed by my other teammates using .NET"
+    description: "A tourism promotion website for Da Nang, featuring location exploration, reviews, blog posting, and itinerary planning. I was responsible for designing and developing the frontend.\n- Features:\n\t- Explore and review tourist attractions in Da Nang\n\t- Users can read and post travel blogs\n\t- Create and share personalized travel itineraries\n\t- Website content and user management page for administrators\n- Technologies:\n\t- Built with React and TypeScript for a modern and scalable frontend\n\t- Vite for fast development and optimized builds\n\t- Styled using TailwindCSS for a clean UI\n\t- Animated interactions using Framer Motion\n\t- Routing handled by React Router DOM\n- The backend of website was developed by my other teammates using .NET"
   },
 ];
 
