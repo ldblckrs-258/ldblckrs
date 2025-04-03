@@ -4,6 +4,7 @@ import { JetBrains_Mono, Roboto_Condensed } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
+import { ChatPopup } from '@/components/chat'
 import { HeaderMotion } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
@@ -49,6 +50,7 @@ export default function RootLayout({
           <HeaderMotion />
           {children}
           <Toaster richColors closeButton expand />
+          <ChatPopup />
         </ThemeProvider>
         <WebOverlay />
         <Analytics />
