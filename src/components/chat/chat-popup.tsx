@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, MessageSquare, Send, X } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 
 import { Message } from './interfaces'
 import MessageList from './message-list'
@@ -17,6 +16,7 @@ export function ChatPopup() {
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
+  const eventSourceRef = useRef<EventSource | null>(null)
 
   // Focus input when chat is opened
   useEffect(() => {
@@ -24,6 +24,15 @@ export function ChatPopup() {
       inputRef.current?.focus()
     }
   }, [isOpen])
+
+  // Cleanup event source on unmount
+  useEffect(() => {
+    return () => {
+      if (eventSourceRef.current) {
+        eventSourceRef.current.close()
+      }
+    }
+  }, [])
 
   const toggleChat = () => {
     setIsOpen(!isOpen)
@@ -45,8 +54,25 @@ export function ChatPopup() {
     setInputValue('')
     setIsLoading(true)
 
+    // Create a placeholder for the AI response that will be streamed
+    const responseId = (Date.now() + 1).toString()
+    const streamingMessage: Message = {
+      id: responseId,
+      content: '',
+      sender: 'gemini',
+      timestamp: new Date().toISOString(),
+    }
+
+    // Add the placeholder message
+    setMessages((prev) => [...prev, streamingMessage])
+
     try {
-      // Send message to our API endpoint
+      // Close any existing event source
+      if (eventSourceRef.current) {
+        eventSourceRef.current.close()
+      }
+
+      // Use streaming API
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -55,36 +81,90 @@ export function ChatPopup() {
         body: JSON.stringify({
           message: userMessage.content,
           chatHistory: messages,
+          stream: true, // Request streaming response
         }),
       })
 
-      if (!response.ok) {
-        throw new Error(`Failed to get response from AI: ${response.status}`)
+      if (!response.ok || !response.body) {
+        throw new Error(`Failed to get streaming response: ${response.status}`)
       }
 
-      const data = await response.json()
+      // Create a new ReadableStream from the response body
+      const reader = response.body.getReader()
+      const decoder = new TextDecoder()
+      let accumulatedContent = ''
 
-      // Ensure the response has a valid timestamp (add current date if missing)
-      const aiResponse: Message = {
-        ...data.response,
-        timestamp: data.response.timestamp || new Date().toISOString(),
+      // Process the stream
+      const processStream = async () => {
+        try {
+          while (true) {
+            const { done, value } = await reader.read()
+
+            if (done) {
+              break
+            }
+
+            // Decode the chunk
+            const chunk = decoder.decode(value, { stream: true })
+
+            // Process each SSE event
+            const lines = chunk.split('\n\n')
+            for (const line of lines) {
+              if (line.startsWith('data: ')) {
+                try {
+                  const data = JSON.parse(line.substring(6))
+
+                  if (data.error) {
+                    // Handle error in stream
+                    console.error('Streaming error:', data.error)
+                  } else if (data.done) {
+                    // Stream is complete
+                    setIsLoading(false)
+                  } else if (data.token) {
+                    // Update the accumulated content
+                    accumulatedContent += data.token
+
+                    // Update the streaming message content
+                    setMessages((prevMessages) =>
+                      prevMessages.map((msg) =>
+                        msg.id === responseId
+                          ? { ...msg, content: accumulatedContent }
+                          : msg
+                      )
+                    )
+                  }
+                } catch (e) {
+                  console.error('Error parsing SSE data:', e)
+                }
+              }
+            }
+          }
+        } catch (error) {
+          console.error('Error reading stream:', error)
+          setIsLoading(false)
+        } finally {
+          reader.releaseLock()
+        }
       }
 
-      // Add AI response to messages
-      setMessages((prev) => [...prev, aiResponse])
+      // Start processing the stream
+      processStream()
     } catch (error) {
       console.error('Error sending message:', error)
 
-      // Add error message if API call fails
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content: 'Sorry, I encountered an error. Please try again later.',
-        sender: 'gemini',
-        timestamp: new Date().toISOString(),
-      }
+      // Update the streaming message with an error
+      setMessages((prevMessages) =>
+        prevMessages.map((msg) =>
+          msg.id === responseId
+            ? {
+                ...msg,
+                content:
+                  'Sorry, I encountered an error. Please try again later.',
+              }
+            : msg
+        )
+      )
 
-      setMessages((prev) => [...prev, errorMessage])
-    } finally {
       setIsLoading(false)
     }
   }
@@ -117,24 +197,24 @@ export function ChatPopup() {
                 variant='ghost'
                 size='icon'
                 onClick={toggleChat}
-                className='h-7 w-7'
+                className='h-7 w-7 cursor-pointer'
               >
                 <X className='h-4 w-4' />
               </Button>
             </div>
 
             {/* Messages container */}
-            <div className='flex-1 overflow-y-auto p-4'>
-              {messages.length === 0 ? (
+            {messages.length === 0 ? (
+              <div className='flex-1 p-4'>
                 <div className='flex h-full items-center justify-center'>
                   <p className='text-center text-muted-foreground'>
                     Ask the AI for information about me.
                   </p>
                 </div>
-              ) : (
-                <MessageList messages={messages} isLoading={isLoading} />
-              )}
-            </div>
+              </div>
+            ) : (
+              <MessageList messages={messages} />
+            )}
 
             {/* Input area */}
             <div className='border-t p-3'>
@@ -150,6 +230,7 @@ export function ChatPopup() {
                   disabled={isLoading}
                 />
                 <Button
+                  className='cursor-pointer'
                   onClick={handleSendMessage}
                   size='icon'
                   disabled={!inputValue.trim() || isLoading}
@@ -167,7 +248,7 @@ export function ChatPopup() {
         <Button
           onClick={toggleChat}
           size='icon'
-          className='size-10 sm:size-12 rounded-full shadow-lg'
+          className='size-10 sm:size-12 rounded-full shadow-lg cursor-pointer'
         >
           {isOpen ? (
             <ChevronDown className='size-6' />
