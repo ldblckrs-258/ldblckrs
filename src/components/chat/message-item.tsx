@@ -39,7 +39,15 @@ const MessageItem = ({ message }: MessageItemProps) => {
           : 'bg-muted rounded-bl-xs'
       )}
     >
-      <Markdown>{message.content}</Markdown>
+      {message?.content?.length ? (
+        <Markdown>{message.content}</Markdown>
+      ) : (
+        <div className='flex animate-pulse items-center gap-1 rounded-lg bg-muted px-4 pt-2'>
+          <span className='h-2 w-2 rounded-full bg-primary/50'></span>
+          <span className='h-2 w-2 rounded-full bg-primary/50 animation-delay-200'></span>
+          <span className='h-2 w-2 rounded-full bg-primary/50 animation-delay-400'></span>
+        </div>
+      )}
       <span className='mt-1 text-right text-xs opacity-70'>
         {formatTimestamp(message.timestamp)}
       </span>

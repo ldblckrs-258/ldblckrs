@@ -1,6 +1,3 @@
-import fs from 'fs/promises';
-import path from 'path';
-
 // Function to extract portfolio context data from data files
 export async function getPortfolioContextData(): Promise<string> {
   try {
