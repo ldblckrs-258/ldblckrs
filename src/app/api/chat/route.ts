@@ -4,9 +4,8 @@ import { Message } from '@/components/chat/interfaces';
 
 // List of allowed origins (your website domains)
 const allowedOrigins = [
-  // Add your production domains here
-  'https://yourdomain.com',
-  'https://www.yourdomain.com',
+  ...(process.env.WEB_DOMAINS ? process.env.WEB_DOMAINS.split(',').map(domain => domain.trim()) : []),
+  'https://ldblckrs.vercel.app',
   // Allow localhost for development
   ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : [])
 ];
