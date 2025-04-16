@@ -1,9 +1,10 @@
+import { NextResponse } from 'next/server'
 import { MetadataRoute } from 'next'
 
 import { NAV_LINKS } from '@/static/config/navigation'
 import ME from '@/static/data/me'
 
-export function GET(): MetadataRoute.Sitemap {
+export function GET(): Response {
   const baseUrl = 'https://ldblckrs.id.vn'
   const lastUpdated = new Date()
 
@@ -39,7 +40,7 @@ export function GET(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  return [
+  const sitemap: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: lastUpdated,
@@ -50,4 +51,10 @@ export function GET(): MetadataRoute.Sitemap {
     ...apiEntries,
     ...socialEntries,
   ]
+  
+  return NextResponse.json(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  })
 }

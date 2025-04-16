@@ -1,5 +1,3 @@
-import { MetadataRoute } from 'next'
-
 import ME from '@/static/data/me'
 
 // This endpoint provides JSON-LD structured data for better SEO

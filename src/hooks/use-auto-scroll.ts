@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 const useAutoScroll = (enabled: boolean, deps: any[]) => {
   const listRef = useRef<HTMLUListElement>(null);
-
   useEffect(() => {
     if (enabled && listRef.current) {
       return autoScrollListRef(listRef.current);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled, ...deps]);
 
   return listRef;

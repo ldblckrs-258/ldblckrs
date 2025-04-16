@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendMessageToGemini, streamMessageToGemini, getChatHistory, setChatHistory } from '@/lib/ai-service';
+import { sendMessageToGemini, streamMessageToGemini, setChatHistory } from '@/lib/ai-service';
 import { Message } from '@/components/chat/interfaces';
 
 // List of allowed origins (your website domains)

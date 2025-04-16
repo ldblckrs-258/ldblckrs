@@ -1,10 +1,11 @@
+import { NextResponse } from 'next/server'
 import { MetadataRoute } from 'next'
 
 import ME from '@/static/data/me'
 
 // This endpoint generates a Web App Manifest for PWA support
-export function GET(): MetadataRoute.Manifest {
-  return {
+export function GET(): Response {
+  const manifest: MetadataRoute.Manifest = {
     name: `${ME.fullName} | Software Engineer & Web Developer`,
     short_name: 'LDB Portfolio',
     description: `Personal portfolio of ${ME.fullName}, a Software Engineer specializing in Web development with a focus on Frontend development.`,
@@ -29,4 +30,10 @@ export function GET(): MetadataRoute.Manifest {
     orientation: 'portrait',
     lang: 'en-US',
   }
+  
+  return NextResponse.json(manifest, {
+    headers: {
+      'Content-Type': 'application/manifest+json',
+    },
+  })
 }

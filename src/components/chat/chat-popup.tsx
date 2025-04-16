@@ -24,12 +24,14 @@ export function ChatPopup() {
       inputRef.current?.focus()
     }
   }, [isOpen])
-
   // Cleanup event source on unmount
   useEffect(() => {
+    // Save the current reference to ensure it's the same in cleanup
+    const currentEventSource = eventSourceRef.current
+
     return () => {
-      if (eventSourceRef.current) {
-        eventSourceRef.current.close()
+      if (currentEventSource) {
+        currentEventSource.close()
       }
     }
   }, [])
