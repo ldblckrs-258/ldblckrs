@@ -41,6 +41,7 @@ export function ProjectItem({
                 <a
                   className='shrink-0 -translate-y-px text-muted-foreground'
                   href={project.link}
+                  aria-label={project.title}
                   target='_blank'
                   rel='noreferrer'
                 >

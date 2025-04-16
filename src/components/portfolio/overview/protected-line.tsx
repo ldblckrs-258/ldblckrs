@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-
 import { Markdown } from '@/components/markdown'
 import { useIsClient } from '@/hooks/use-is-client'
 

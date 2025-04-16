@@ -186,6 +186,7 @@ export function ChatPopup() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className='mb-4 flex h-[450px] w-[350px] flex-col overflow-hidden rounded-lg border bg-background shadow-lg'
+            title='Chatbot'
           >
             {/* Chat header */}
             <div className='flex items-center justify-between border-b bg-primary/10 px-4 py-3'>
