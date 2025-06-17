@@ -230,7 +230,7 @@ export function ChatPopup() {
                   onKeyDown={handleKeyDown}
                   placeholder='Type a message...'
                   className='flex-1 rounded-md border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-1 focus-visible:ring-ring'
-                  disabled={isLoading}
+                  autoFocus
                 />
                 <Button
                   className='cursor-pointer'

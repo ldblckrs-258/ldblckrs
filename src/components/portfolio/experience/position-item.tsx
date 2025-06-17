@@ -36,7 +36,7 @@ export function PositionItem({ position }: { position: ExperiencePosition }) {
               </>
             )}
 
-            <span>{position.year}</span>
+            {!position.hideYear && <span>{position.year}</span>}
           </div>
         </AccordionPrimitive.Trigger>
 
