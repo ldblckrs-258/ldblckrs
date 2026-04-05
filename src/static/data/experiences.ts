@@ -6,11 +6,11 @@ const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: 'ca1f8a37-29ff-47cd-a8ee-6a088b6aa27c',
-        title: 'Front-end Developer',
+        title: 'Fullstack Web Developer',
         year: '2024 - present',
         employmentType: 'Part-time',
         description:
-          '- Built a significant portion of the UI for an AI assistant travel website.\n- Designed and developed the front-end for a crypto blog website.',
+          '- Team member building a dental practice management web app.\n- Built a significant portion of the UI for an AI assistant travel website.\n- Designed and developed the front-end for a crypto blog website.',
         icon: 'code',
         skills: ['React', 'Next.js', 'Tailwind CSS'],
         expanded: true,
